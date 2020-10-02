@@ -89,7 +89,7 @@ In the text mode, there are 80 columns and 25 rows, amounting to a total of 2000
 * I hookup the timer interrupt by setting my own interrupt handlers to a function I've defined.
 * Whenever a timer interrupt gets called or the functions which depends on the timer interrupt get called, the virus's code executes at that instant.
 * I use the interrupt number 8, signifying the system timer interrupt. Which is a common practice to use to "continuously" do things on a DOS machine.
-* It generates a random location for the row, and column where we try to 
+* It generates a random location for the row, and column and then I send that data to a function that writes a character to the screen.
 * The function writes an empty character with black color, making a square box that I use to slowly kill the screen.
 * I use TSR programming to keep the virus alive and running even after quitting the program. This is done using the "keep" function in the "dos.h" library. This function reserves an area of memory, by specifying how many bytes to reserve, which will not be overwritten by any other program after the virus termination.
 
