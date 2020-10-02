@@ -49,7 +49,7 @@ These are two functions I've used in this program to manipulate the interrupt ve
 
 ## Far pointers
 
-The default pointers in C are near. For example: int *p is a near pointer. And in the case of a 16-bit compiler, the size of a pointer is 2 bytes, but in general, the size varies between different compilers. They only store the offset of the pointer's address it is referencing. An address consisting of only an offset has a range of 0 - 64K bytes. To access memory beyond 64K in the allocated segment, we need far pointers.
+The default pointers in C are near. For example: *int *p* is a near pointer. And in the case of a 16-bit compiler, the size of a pointer is 2 bytes, but in general, the size varies between different compilers. They only store the offset of the pointer's address it is referencing. An address consisting of only an offset has a range of 0 - 64K bytes. To access memory beyond 64K in the allocated segment, we need far pointers.
 
 Far pointers are 4 bytes in size. They store both the segment and the offset of the address the pointer is referencing.
 
@@ -67,7 +67,7 @@ Example of usage:
 //Using the far pointer to access the graphics memory.
 char *far screen = 0xB8000000;
 //Print the character 'H' on screen at left top.
-*p = 'H'; 
+*screen = 'H'; 
 ```
 Accessing the graphics memory:
 ```
