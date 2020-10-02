@@ -62,6 +62,12 @@ The starting location bytes from this address **0xB8000000** (equal to the scree
 
 All characters on the screen are made up of two bytes. The first is the ASCII character, and the second is the color. Both of which must be supplied when drawing to the graphics memory.
 
+
+Accessing the graphics memory:
+```
+char far* screen = (char far*) 0xb8000000; 
+```
+
 Example of usage:
 ```
 //Using the far pointer to access the graphics memory.
@@ -69,10 +75,7 @@ char *far screen = 0xB8000000;
 //Print the character 'H' on screen at left top.
 *screen = 'H'; 
 ```
-Accessing the graphics memory:
-```
-char far* scr = (char far*) 0xb8000000; 
-```
+
 Here is a table of the MS-DOS memory map, where we can see the location and address of the video graphcis.
 
 ![MS-DOS Memory Map](https://user-images.githubusercontent.com/40869908/94881806-3eae9d80-045e-11eb-97a0-891a1f87ad1d.JPG)
