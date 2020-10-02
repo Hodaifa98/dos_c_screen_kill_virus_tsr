@@ -6,7 +6,7 @@ A DOS virus that kills the screen. Written in C and is a TSR program.
 
 This is an attempt at learning 16-bit programming on the DOS system. The purpose of this program is to act as a TSR virus that kills the screen, even after quitting the program.
 
-Below is a short, on the surface, but concise explanation of various terms I've referenced, and code bits I've used.
+Below is a short, on the surface, but concise explanation of various terms I've referenced or mentioned, and code bits I've used.
 
 **Warning:** This is done for learning purposes only.
 
@@ -18,7 +18,7 @@ TSR, or Terminate and Stay Resistant programs remain active inside a computer's 
 
 ## Interrupt
 
-In computers, devices usually can cause interrupts when in a request for a particular service. Such as getting/receiving a byte. An example would be pressing a key, and that will cause an interrupt. 
+In computers, devices usually can cause interrupts when there is a request for a particular service. Such as getting/receiving a byte. An example would be pressing a key, and that will cause an interrupt. 
 
 In the x68 architecture, there are 256 different interrupts (from 0 to 255), and each number is used to perform a specific action. The first 1024 bytes of memory is reserved for the 256 far pointers, which are also called interrupt vectors. To special system routines, vector interrupt handlers are called by executing the x68 system instructions.
 
@@ -49,7 +49,7 @@ These are two functions I've used in this program to manipulate the interrupt ve
 
 ## Far pointers
 
-The default pointers in C are near. For example: int *p is a near pointer. And in the case of a 16-bit compiler, the size of a pointer is 2 bytes, but in general, the size varies between different compilers. They only store the offset of the pointer's address it is referencing. An address consisting of only an offset has a range of 0 - 64K bytes To access memory beyond 64K in the allocated segment, we need far pointers.
+The default pointers in C are near. For example: int *p is a near pointer. And in the case of a 16-bit compiler, the size of a pointer is 2 bytes, but in general, the size varies between different compilers. They only store the offset of the pointer's address it is referencing. An address consisting of only an offset has a range of 0 - 64K bytes. To access memory beyond 64K in the allocated segment, we need far pointers.
 
 Far pointers are 4 bytes in size. They store both the segment and the offset of the address the pointer is referencing.
 
