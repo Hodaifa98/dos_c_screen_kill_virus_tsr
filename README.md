@@ -84,7 +84,7 @@ In the text mode, there are 80 columns and 25 rows, amounting to a total of 2000
 
 * I access the graphics memory using a far pointer.
 * I hookup the timer interrupt by setting my own interrupt handlers to a function I've defined.
-* Whenever a timer interrupt gets called or the functions which depends on the timer interrupt get called, the virus's code executes at thet instant.
+* Whenever a timer interrupt gets called or the functions which depends on the timer interrupt get called, the virus's code executes at that instant.
 * I use the interrupt number 8, signifying the system timer interrupt. Which is a common practice to use to "continuously" do things on a DOS machine.
 * It generates a random location for the row, and column where we try to 
 * The function writes an empty character with black color, making a square box that I use to slowly kill the screen.
